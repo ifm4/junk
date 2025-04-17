@@ -1,0 +1,15 @@
+[manager]
+border_symbol = " "
+border_style = { }
+
+# # DISABLES ICONS AND NERD FONTS SYMBOLS #
+# [status]
+# sep_left = { open = "", close = "" }
+# sep_right = { open = "", close = "" }
+
+# [icon]
+# globs = []
+# dirs  = []
+# files = []
+# exts  = []
+# conds = []

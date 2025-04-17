@@ -1,0 +1,20 @@
+[manager]
+show_hidden = false
+ratio = [1, 2, 3]
+sort_dir_first = true
+show_symlink = true
+scrolloff = 7
+
+[preview]
+wrap = "no"
+
+[opener]
+play = [
+  { run = 'pv "$@"', orphan = true, for = "unix" },
+]
+edit = [
+  { run = '$EDITOR "$@"', block = true, for = "unix" },
+]
+open = [
+  { run = 'pv "$@"', desc = "Preview" },
+]

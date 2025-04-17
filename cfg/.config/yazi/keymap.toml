@@ -1,0 +1,4 @@
+[manager]
+append_keymap = [
+	{ on = [ "T" ], run = 'tab_close', desc = "Close a tab" },
+]

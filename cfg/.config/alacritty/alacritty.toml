@@ -1,0 +1,62 @@
+live_config_reload = true
+
+[window]
+title = 'Alacritty'
+dynamic_title = false
+startup_mode = 'Maximized'
+decorations = 'None'
+opacity = 0.80
+padding = { x = 12, y = 12 }
+dynamic_padding = true
+
+[mouse]
+hide_when_typing = true
+
+[scrolling]
+history = 10000
+
+[font]
+size = 18
+normal = { family = 'Cascadia Code', style = 'Regular' }
+bold = { family = 'Cascadia Code', style = 'Regular' }
+italic = { family = 'Cascadia Code', style = 'Regular' }
+bold_italic = { family = 'Cascadia Code', style = 'Regular' }
+
+# theme=tokyonight
+
+[colors.primary]
+background = '#1a1b26'
+foreground = '#c0caf5'
+
+[colors.cursor]
+cursor = '#c0caf5'
+text = '#1a1b26'
+
+[colors.normal]
+black = '#15161e'
+red = '#f7768e'
+green = '#9ece6a'
+yellow = '#e0af68'
+blue = '#7aa2f7'
+magenta = '#bb9af7'
+cyan = '#7dcfff'
+white = '#a9b1d6'
+
+[colors.bright]
+black = '#414868'
+red = '#f7768e'
+green = '#9ece6a'
+yellow = '#e0af68'
+blue = '#7aa2f7'
+magenta = '#bb9af7'
+cyan = '#7dcfff'
+white = '#c0caf5'
+
+[[colors.indexed_colors]]
+index = 16
+color = '#ff9e64'
+
+[[colors.indexed_colors]]
+index = 17
+color = '#db4b4b'
+
