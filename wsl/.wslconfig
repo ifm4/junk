@@ -1,0 +1,8 @@
+[wsl2]
+memory=4294967296
+swap=4294967296
+defaultVhdSize=68719476736
+vmIdleTimeout=600000
+processors=4
+guiApplications=false
+nestedVirtualization=false
