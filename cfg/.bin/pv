@@ -1,0 +1,53 @@
+#!/usr/bin/sh
+
+TEMP_POSTFIX="_temp.out"
+RED='\033[0;31m'
+GRN='\033[0;32m'
+YLW='\033[0;33m'
+RST='\033[0m'
+
+if [ "$#" -ne 1 ]; then
+    echo "${YLW}USAGE: ${0##*/} <filename>${RST}"
+    exit 1
+fi
+FILE="$1"
+if [ -z "${FILE}" ]; then
+    echo "${YLW}USAGE: ${0##*/} <filename>${RST}"
+    exit 1
+elif [ ! -f "${FILE}" -a ! -d "${FILE}" ]; then
+    echo "${RED}File '${FILE}' not found!${RST}"
+    exit 1
+fi
+BASE="${FILE%.*}"
+EXT="${FILE##*.}"
+
+case "$EXT" in
+    typ)
+        echo "${GRN}${FILE} ~> typst${RST}"
+        typst compile "${FILE}" --open
+        ;;
+    c)
+        echo "${GRN}${FILE} ~> gcc${RST}"
+        gcc -o "${BASE}${TEMP_POSTFIX}" "${FILE}" && $0 "${BASE}${TEMP_POSTFIX}"
+        rm "${BASE}${TEMP_POSTFIX}"
+        ;;
+    cpp)
+        echo "${GRN}${FILE} ~> g++${RST}"
+        g++ -o "${BASE}${TEMP_POSTFIX}" "${FILE}" && $0 "${BASE}${TEMP_POSTFIX}"
+        rm "${BASE}${TEMP_POSTFIX}"
+        ;;
+    out)
+        echo "${GRN}EXECUTING ${FILE}:${RST}"
+        ./"${FILE}"
+        EXIT_CODE=$?
+        if [ $EXIT_CODE -ne 0 ]; then
+            echo "${YLW}EXITED WITH CODE (${EXIT_CODE})${RST}"
+        else
+            echo "${GRN}EXITED SUCCESSFULLY (${EXIT_CODE})${RST}"
+        fi
+        ;;
+    *)
+        echo "${GRN}${FILE} ~> open${RST}"
+        xdg-open "${FILE}"
+        ;;
+esac

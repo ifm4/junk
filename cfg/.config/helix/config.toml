@@ -37,8 +37,8 @@ center = [
 ]
 right = [
   "register",
-  "separator",
-  "file-type",
+  # "separator",
+  # "file-type",
   "separator",
   "selections",
   "separator",
@@ -67,10 +67,9 @@ esc = ["collapse_selection", "keep_primary_selection"]
 [keys.normal.S-tab]
 Q = ":qa!"
 Z = ":xa!"
-R = ":config-reload"
-r = ":redraw"
+R = ":redraw"
 b = ":toggle-option bufferline never multiple"
 w = ":toggle-option soft-wrap.enable"
 i = ":toggle-option indent-guides.render"
-p = ":sh pv \"$(ls *.tex)\""
+p = ":sh pv \"$(ls *.typ)\""
 "\\" = ":toggle-option whitespace.render none all"

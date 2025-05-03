@@ -1,0 +1,11 @@
+#!/usr/bin/sh
+
+EXT="md"
+DIRNAME="dry"
+DIARY="${HOME}/${DIRNAME}/"
+if [ ! -d "${DIARY}" ]; then
+    mkdir "${DIARY}"
+fi
+
+PAGE="${DIARY}$(date -u +%Y-%m-%d).${EXT}"
+"${EDITOR}" "${PAGE}"
